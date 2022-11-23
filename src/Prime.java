@@ -1,5 +1,10 @@
 public class Prime {
     public static void main(String[] args) {
+        //----Добавил двух тестовых авторов
+        Author testAuthor = new Author("Адам", "Невилл");
+        Author secondTestAuthor = new Author("Джоан", "Роулинг");
+
+
         Author twilightAuthor = new Author("Дмитрий", "Глуховский");
         Book twilight = new Book("Сумерки", twilightAuthor, 2018);
         System.out.println(twilight.toString());
@@ -9,14 +14,14 @@ public class Prime {
         ritual.setYear(2020);
         System.out.println(ritual.toString());
 
-        //----Создал тестовую книгу, добавил значения идентичные первой книги, чтобы сравнить их
-        Book testBook = new Book("Сумерки", twilightAuthor, 2018);
+        //----Добавил тестовую книгу, добавил значения идентичные первой книги, чтобы сравнить их и вывести true
+        Book testBook = new Book("Сумерки", twilightAuthor, 2020);
 
-        System.out.println(twilight.equals(testBook)); //значение выводит true, сравнение производится по наименованию и автору книги
+        System.out.println(twilight.equals(testBook)); //значение выводит true, сравнение производится по наименованию и автору книги (год не учитывается, могут быть разные издания)
+        System.out.println(ritualAuthor.equals(testAuthor)); //значение выводит true, имя и фамилия автора совпадают.
+        System.out.println(testAuthor.equals(secondTestAuthor)); //значение выводит false, так как фамилия и имя авторов не совпадают.
 
-        //----Создал тестового автора, добавил фамилию и имя от предыдущего для сравнения
-        Author testAuthor = new Author("Адам", "Невилл");
-        System.out.println(ritualAuthor.equals(testAuthor)); //значение выводит true, сравнение производится по имени и фамилии автора
+
     }
 
 }
