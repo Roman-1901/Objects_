@@ -8,30 +8,34 @@ public class Author {
         this.name = name;
         this.surname = surname;
     }
+
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
 
+        @Override
+    public String toString() {
+        return name + " " + surname;
+    }
 
-    @Override
+        @Override
     public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
         Author author = (Author) other;
-        return name == author.name && surname == author.surname;
+        return name.equals(author.name) && surname.equals(author.surname);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name, surname);
     }
-
-    @Override
-    public String toString() {
-        return name + " " + surname;
-    }
 }
+
+
+

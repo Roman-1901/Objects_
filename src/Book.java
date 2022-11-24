@@ -10,12 +10,15 @@ public class Book {
         this.author = author;
         this.year = year;
     }
+
     public String getNameBook() {
         return nameBook;
     }
+
     public Author getAuthor() {
         return author;
     }
+
     public int getYear() {
         return year;
     }
@@ -24,13 +27,19 @@ public class Book {
         this.year = year;
     }
 
-    @Override
+        @Override
+    public String toString() {
+        return "Название книги: "+ nameBook + ", Автор: " + author + ", Год издания: " + year;
+    }
+
+
+        @Override
     public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
         Book book = (Book) other;
-        return nameBook == book.nameBook && author == book.author;
+            return nameBook.equals(book.nameBook) && author == book.author;
     }
 
     @Override
@@ -38,9 +47,6 @@ public class Book {
         return Objects.hash(nameBook, author);
     }
 
-    @Override
-    public String toString() {
-        return "Название книги: "+ nameBook + ", Автор: " + author + ", Год издания: " + year;
-    }
-
 }
+
+

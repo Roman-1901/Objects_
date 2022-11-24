@@ -22,6 +22,8 @@ public class Prime {
         System.out.println(testAuthor.equals(secondTestAuthor)); //значение выводит false, так как фамилия и имя авторов не совпадают.
 
 
+
+
     }
 
 }
